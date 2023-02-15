@@ -25,7 +25,7 @@ jobs:
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
 
-      # Runs a single command using the runners shell
+      # Ruuns a single command using the runners shell
       - name: Run a multi-line script
         run: |
           echo "************** add file to repo **************"
