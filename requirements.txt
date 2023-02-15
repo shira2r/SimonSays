@@ -1,0 +1,2 @@
+requests
+git+https://github.com/shira2r/testpackage.git@master#testpackage
