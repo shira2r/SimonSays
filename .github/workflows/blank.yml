@@ -28,6 +28,6 @@ jobs:
       # Ruuns a single command using the runners shell
       - name: Run a multi-line script
         run: |
-          echo "************** add file to repo **************"
+          echo "************** addd file to repo **************"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
