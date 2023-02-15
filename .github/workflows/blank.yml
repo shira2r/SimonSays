@@ -26,7 +26,7 @@ jobs:
           repository: ${{github.event.pull_request.head.repo.full_name}}
       
       - name: Install dependencies
-        run: npm install
+        run: pip install -r requirements.txt
 
       # Ruuns a single command using the runners shell
       - name: Run a multi-line script
