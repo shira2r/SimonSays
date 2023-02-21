@@ -1,2 +1,2 @@
 # SimonSays
-champagne for everyone!
+Champagne for everyone!
