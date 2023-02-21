@@ -12,7 +12,7 @@ jobs:
 
       - name: Run a multi-line script
         run: |
-          cd /home/runner/work
+          cd /home/runner/work/SimonSays
           ls -a         
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
