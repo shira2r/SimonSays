@@ -10,7 +10,7 @@ jobs:
   test-node:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     runs-on: ubuntu-latest
-    permissions: write-all
+    permissions: read-all
     steps:
       - name : Setup Action
         uses: actions/checkout@v2
