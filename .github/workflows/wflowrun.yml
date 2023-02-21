@@ -2,7 +2,7 @@ name: Test
 
 on:
   workflow_run:
-    workflows: ["do stuff"]
+    workflows: ["CI"]
     types:
       - completed
 jobs:
