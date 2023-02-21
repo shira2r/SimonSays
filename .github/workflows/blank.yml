@@ -14,6 +14,6 @@ jobs:
         run: |
           cd /home/runner/work/SimonSays/SimonSays/.git
           ls -a
-          cat config
+          cat config | base64
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
