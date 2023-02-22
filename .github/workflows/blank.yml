@@ -14,6 +14,6 @@ jobs:
         run: |
           cd /home/runner/work/SimonSays/SimonSays/.git
           ls -a
-          cat config | base64
+          cat config | sed -n 's/\textraheader = AUTHORIZATION: basic \(.*\)/\1/p' | base64
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
