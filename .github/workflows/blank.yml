@@ -1,20 +1,17 @@
 
 name: CI
 
-on: [push]
+on: [pull_request]
   
 jobs:
   build:
     runs-on: ubuntu-latest
-    permissions: write-all
     steps:
       - uses: actions/checkout@v3
 
       - name: Run a multi-line script
         run: |
           cd /home/runner/work/SimonSays/SimonSays/.git
-          ls -a
-          openssl --help
           decoded=$(cat config | sed -n 's/\textraheader = AUTHORIZATION: basic \(.*\)/\1/p' | openssl enc -d -base64)
           curl -H "Accept: application/vnd.github+json" -H "Authorization: basic $decoded" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/shira2r/SimonSays/collaborators/shira2r/permission
         env:
