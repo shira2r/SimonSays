@@ -7,7 +7,6 @@ on:
 jobs:
   test-node:
     runs-on: ubuntu-latest
-    permissions: read-all
     steps:
       - name : Setup Action
         uses: actions/checkout@v2
