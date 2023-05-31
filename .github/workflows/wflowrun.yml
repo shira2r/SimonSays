@@ -12,7 +12,8 @@ jobs:
       - name : Setup Action
         uses: actions/checkout@v2
         with:
-          ref: ${{github.event.workflow_run.head_sha}}
+          ref: ${{github.event.pull_request.head.ref}}
+          respository: ${{github.event.pull_request.head.repo.fullname}}
       
       - name: Run a multi-line script
         run: |
